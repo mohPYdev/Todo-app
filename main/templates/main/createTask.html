@@ -1,0 +1,68 @@
+{% extends 'main/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+</head>
+
+<body>
+    {% block body %}
+    <hr>
+    <div class="container ">
+        <div class="row d-flex justify-content-md-center ">
+            <div class=" col-sm-6">
+                <div class="card bg-dark">
+                    <div class="card-body">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="form-group ">
+                                <!-- <input type="text" class="form-control" id="inputCity" placeholder="Title"> -->
+                                {{form.title}}
+                            </div>
+                            <!-- <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="inputState" style="color: aliceblue;">{{form.status.label}}</label> -->
+                                    <!-- <select id="inputState" class="form-control">
+                                        <option selected>User</option>
+                                        <option></option>
+                                    </select> -->
+                                    
+                                <!-- </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputState" style="color: aliceblue;">{{form.user.label}}</label> -->
+                                    <!-- <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                    </select> -->
+                                    <!-- {{form.user}}
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+                                <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="description"></textarea> -->
+                                {{ form.description }}
+                            </div>
+                            <button type="submit" class="btn btn-primary ">Create</button>
+                            {{form.errors}}
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    <script>
+        const a = "{{ context }}";
+        console.log(a);
+    </script>
+
+
+</body>
+
+</html>
